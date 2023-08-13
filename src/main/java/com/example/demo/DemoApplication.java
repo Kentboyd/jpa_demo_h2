@@ -25,10 +25,7 @@ public class DemoApplication {
 
 			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023");
 			customerRepository.save(jenny);
-<<<<<<< HEAD
 			
-=======
->>>>>>> ca203c395631ba3dfabd5e12a8bb318089701d66
 
 			// Q: see if you can figure out how to create Order records, next....
 			// order table
