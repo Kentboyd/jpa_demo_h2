@@ -15,11 +15,8 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
 		return arg -> {
-<<<<<<< HEAD
 			//optionally use in addition to or in place of data.sql seeding
-=======
 			// optionally use in addition to or in place of data.sql seeding
->>>>>>> ca203c395631ba3dfabd5e12a8bb318089701d66
 			Customer john = new Customer("John", "Alexander", "07/28/2023");
 			customerRepository.save(john);
 
