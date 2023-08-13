@@ -3,8 +3,10 @@ package com.example.demo;
 import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -20,6 +22,11 @@ public class Customer {
                               // as, Nullable. This means the column cannot be empty
     private long id;
 
+    @OneToMany (fetch = FetchType.LAZY, mappedBy = "customer")
+    private List<Orders> orders;
+    
+
+    
     @Column(nullable = false, columnDefinition = "TEXT")
     private String first_name; // alt: firstName -> db: first_name
 

@@ -13,7 +13,7 @@ public class DemoApplication {
 	}
 
 	@Bean
-	CommandLineRunner commandLineRunner(CustomerRepository customerRepository) {
+	CommandLineRunner commandLineRunner(CustomerRepository customerRepository, OrdersRepository ordersRepository) {
 		return arg -> {
 			//optionally use in addition to or in place of data.sql seeding
 			// optionally use in addition to or in place of data.sql seeding
@@ -22,7 +22,9 @@ public class DemoApplication {
 
 			Customer jenny = new Customer("Jenny", "Smith", "07/28/2023");
 			customerRepository.save(jenny);
-			
+
+			Orders stan = new Orders("Stan", "Chicago, IL", 520.64);
+			OrdersRepository.save(stan);
 
 			// Q: see if you can figure out how to create Order records, next....
 			// order table
